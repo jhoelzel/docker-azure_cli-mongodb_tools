@@ -16,3 +16,7 @@ This image is based on mcr.microsoft.com/azure-cli and integrates mongodb-tools 
 - ./Dockerfile/Dockerfile defines our workflow
 - ./makefile gives us different options to build tag and push our container
 - ./renovate.json defines the behavior of <https://github.com/renovatebot/renovate>
+
+## Notes
+
+You can skip a release by providing [ci skip] in the commit message
