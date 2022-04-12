@@ -1,4 +1,6 @@
 {
+  "timezone": "Europe/Berlin",
+  "schedule": "before 5am every weekday",
   "assignees": ["jhoelzel"],
   "enabledManagers": ["dockerfile"],
   "extends": [
