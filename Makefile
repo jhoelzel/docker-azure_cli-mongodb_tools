@@ -1,22 +1,18 @@
-# VERSION defines the project version for the bundle.
-# Update this value when you upgrade the version of your project.
-VERSION ?= $(shell git describe --abbrev=0  --tags $(git rev-list --tags --max-count=1))
-# this uses automated versioning by tags
-#VERSION=$(shell git describe --tags $(git rev-list --tags --max-count=1))
-#PATH = $(shell basename "`pwd`")
+### Settings
+# Name of your Image
 NAME=azure_cli-mongodb_tools
-GITBASEURL = github.com/jhoelzel
+# Address of your container registry
 CONTAINER_REPOSITORY=ghcr.io
-## Accountname ends in / because there are none on some registrys
+# Accountname of the registry ends in / because there are none on some registries
 CONTAINER_REPOSITORY_ACCOUNTNAME=jhoelzel/
-PROJECTNAME = $(addprefix ${GITBASEURL}/,${NAME})
+### /Settings
+
+# VERSION defines the project version for the bundle from the latest tag of the repo(usually given by action)
+VERSION ?= $(shell git describe --abbrev=0  --tags $(git rev-list --tags --max-count=1))
 IMAGE_NAME=${NAME}:${VERSION}
 IMAGE_NAME_LATEST=${NAME}:latest
-COMMIT?=$(shell git rev-parse --short HEAD)
-BUILD_TIME?=$(shell date -u '+%Y-%m-%d_%H:%M:%S')
 
 # Setting SHELL to bash allows bash commands to be executed by recipes.
-
 SHELL = /usr/bin/env bash -o pipefail
 .SHELLFLAGS = -ec
 
@@ -51,7 +47,7 @@ docker-run: build ## Build the docker image and tag it and run it in docker
 	docker run --name ${NAME} --rm \
 		$(IMAGE_NAME)
 
-docker-push: ##push your image to the docker hub
+docker-push: ##push your image to the docker registry
 	docker push  ${CONTAINER_REPOSITORY}/${CONTAINER_REPOSITORY_ACCOUNTNAME}${IMAGE_NAME}
 	docker push  ${CONTAINER_REPOSITORY}/${CONTAINER_REPOSITORY_ACCOUNTNAME}${IMAGE_NAME_LATEST}
 

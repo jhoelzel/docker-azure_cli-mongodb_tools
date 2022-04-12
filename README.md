@@ -22,7 +22,33 @@ Github Actions:
 Application:
 
 - ./Dockerfile/Dockerfile defines our Docker container
-- ./makefile gives us different options to build tag and push our container
+- ./Makefile gives us different options to build tag and push our container
+
+Makefile settings:
+
+``` Console
+### Settings
+# Name of your Image
+NAME=azure_cli-mongodb_tools
+# Address of your container registry
+CONTAINER_REPOSITORY=ghcr.io
+# Accountname of the registry ends in / because there are none on some registries
+CONTAINER_REPOSITORY_ACCOUNTNAME=jhoelzel/
+### /Settings
+```
+
+Makefile options:
+
+``` Console
+General
+  help             Display this help.
+  commithistory    create the commithistory in a nice format
+
+Build
+  build            Build the docker image and tag it with the current version and :latest
+  docker-run       Build the docker image and tag it and run it in docker
+  docker-push      push your image to the docker hub
+```
 
 Misc:
 
