@@ -16,8 +16,8 @@ This image is based on mcr.microsoft.com/azure-cli and integrates mongodb-tools 
 
 Github Actions:
 
-- ..github/workflows/docker-publish.yml is the github action that will build and publish a new docker image through the makefile and using the latest tag
-- ..github/workflows/versionbump.yml is the github action that will retrieve the latest tag from the repository, remove the "v" prefix, increase the version by a patch number and create a new tag.
+- ./.github/workflows/docker-publish.yml is the github action that will build and publish a new docker image through the makefile and using the latest tag
+- ./.github/workflows/versionbump.yml is the github action that will retrieve the latest tag from the repository, remove the "v" prefix, increase the version by a patch number and create a new tag.
 
 Application:
 
