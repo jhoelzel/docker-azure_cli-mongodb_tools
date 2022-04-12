@@ -38,6 +38,8 @@ This template will deploy a new version on every master push and can therefore c
 
 This repository is using a branch protection for master, so only pull request can be deployed. This is a default repository setting but should be activated, to minimize unneeded version bumps, as well as docker images.
 
+This repository also needs at least one approver to merge a pull request. This is also done through default github branch protection.
+
 ### skip actions
 
 GitHub Actions: Skip pull request and push workflows with [skip ci]
