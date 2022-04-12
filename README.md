@@ -1,5 +1,6 @@
 # docker-azure_cli-mongodb_tools
-a simple image based on the azure cli docker image, with mongodb-tools 
+
+a simple image based on the azure cli docker image, with mongodb-tools
 
 ## Purpose
 
