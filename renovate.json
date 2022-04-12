@@ -1,0 +1,7 @@
+{
+  "assignees": ["jhoelzel"],
+  "enabledManagers": ["dockerfile"],
+  "extends": [
+    "config:base"
+  ]  
+}
