@@ -19,4 +19,8 @@ This image is based on mcr.microsoft.com/azure-cli and integrates mongodb-tools 
 
 ## Notes
 
-You can skip a release by providing [ci skip] in the commit message
+GitHub Actions: Skip pull request and push workflows with [skip ci]
+
+GitHub Actions supports skipping push and pull_request workflows by looking for some common keywords in your commit message.
+
+If any commit message in your push or the HEAD commit of your PR contains the strings [skip ci], [ci skip], [no ci], [skip actions], or [actions skip] workflows triggered on the push or pull_request events will be skipped.
