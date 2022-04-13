@@ -12,7 +12,4 @@ do
   azure storage blob upload $f $container_name $destination_folder$(basename $f)
 done
 
-echo "List all blobs in container..."
-azure storage blob list $container_name
-
 echo "Completed"
