@@ -4,6 +4,8 @@ a simple image based on the azure cli docker image, with mongodb-tools
 
 ## Purpose
 
+To have a utility container, that sends me an email when there are updates ;)
+
 The purpose of this repository is to automatically update a docker image with custom modifications to the latest version of its dockerfile.
 This image is based on mcr.microsoft.com/azure-cli and integrates mongodb-tools in order to easily backup databases in a production aks.
 
